@@ -1,4 +1,8 @@
-package com.nix.tryout.collections;
+package com.nix.tryout.collections.list.linked;
+
+import com.nix.tryout.collections.Address;
+import com.nix.tryout.collections.AddressComparator;
+import com.nix.tryout.collections.CollectionPacker;
 
 import java.util.Collections;
 import java.util.LinkedList;
