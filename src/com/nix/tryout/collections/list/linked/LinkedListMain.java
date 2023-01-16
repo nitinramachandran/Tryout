@@ -9,7 +9,7 @@ public class LinkedListMain {
         var intList = List.of(2, 4, 6, 8, 10, 11, 12, 13);
         LinkedListNode node = new LinkedListNode();
         node = node.generateLinkedListFromArrayList(intList);
-        node.printAllValues(node);
+        System.out.println(node.getChildNodeValuesAsList(node));
 
         System.out.println("Value : " + node.getYoungestChild(node));
     }

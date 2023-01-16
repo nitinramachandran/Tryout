@@ -3,6 +3,10 @@ package com.nix.tryout.collections.list.linked;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a LinkedList node with a bunch of functionalities.
+ *
+ */
 public class LinkedListNode {
     int val;
     LinkedListNode next;
