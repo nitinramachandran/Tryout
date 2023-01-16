@@ -1,12 +1,16 @@
 package com.nix.tryout.collections.list.linked;
 
+import java.util.List;
+
 public class LinkedListMain {
 
     public static void main(String[] args) {
-        LinkedListNode node = new LinkedListNode();
-     //   node.next = new LinkedListNode(6);
-     //   node.next.next = new LinkedListNode(7);
 
-        System.out.println("Value : " + node.val);
+        var intList = List.of(2, 4, 6, 8, 10, 11, 12, 13);
+        LinkedListNode node = new LinkedListNode();
+        node = node.generateLinkedListFromArrayList(intList);
+        node.printAllValues(node);
+
+        System.out.println("Value : " + node.getYoungestChild(node));
     }
 }

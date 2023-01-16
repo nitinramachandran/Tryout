@@ -2,8 +2,6 @@ package com.nix.tryout.collections.list.linked;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 public class LinkedListNode {
     int val;
@@ -41,6 +39,11 @@ public class LinkedListNode {
         return asList;
     }
 
+    /**
+     * Returns the last child node
+     * @param - The parent LinkedListNode node
+     * @return - The last child node in the LinkedList
+     */
     public LinkedListNode getYoungestChild(LinkedListNode node) {
         if(node != null && node.next != null) {
             return getYoungestChild(node.next);
@@ -48,16 +51,49 @@ public class LinkedListNode {
         return node;
     }
 
+    /**
+     * Prints the values of the linkedList starting from the parent and iterating until the last node
+     *
+     * @param - LinkedListNode
+     */
+    public void printAllValues(LinkedListNode node) {
+        LinkedListNode localNode = node;
+        if(localNode == null) {
+            localNode = this;
+        }
+
+        int counter = 0;
+        while(localNode != null) {
+            System.out.println("Node " + ++counter + " : " + localNode.val);
+            localNode = localNode.next!= null ? localNode.next : null;
+        }
+
+
+    }
+
+    /**
+     * Generate a linkedList with values from the given List<Integer>
+     * @param - List<Integer> intList
+     * @return - Returns parent LinkedList node
+     */
     public LinkedListNode generateLinkedListFromArrayList(List<Integer> intList) {
         LinkedListNode node = new LinkedListNode();
         for(Integer value : intList) {
+
             if(node.val == 0) {
                 node.val = value;
-            } else {
-                LinkedListNode childNode = new LinkedListNode(value);
-                node.next = childNode;
+            } else if(node.next == null) {
+                node.next = new LinkedListNode(value);
+            }
+            else {
+                LinkedListNode childNode = getYoungestChild(node);
+                childNode.next = new LinkedListNode(value);
             }
         }
     return node;
+    }
+    @Override
+    public String toString() {
+        return "Value : " + this.val;
     }
 }
