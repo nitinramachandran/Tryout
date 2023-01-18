@@ -71,8 +71,6 @@ public class LinkedListNode {
             System.out.println("Node " + ++counter + " : " + localNode.val);
             localNode = localNode.next!= null ? localNode.next : null;
         }
-
-
     }
 
     /**
