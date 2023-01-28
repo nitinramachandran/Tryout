@@ -1,0 +1,4 @@
+[{"studentName":"Ram","age":15,"subjects":[{"subjectId":"s1","subjectName":"English"},{"subjectId":"s2","subjectName":"Biology"},{"subjectId":"s3","subjectName":"Maths"}]},
+{"studentName":"Sam","age":14,"subjects":[{"subjectId":"s1","subjectName":"French"},{"subjectId":"s2","subjectName":"Physics"},{"subjectId":"s3","subjectName":"Maths"}]},
+{"studentName":"Jamie","age":15,"subjects":[{"subjectId":"s1","subjectName":"English"},{"subjectId":"s2","subjectName":"Biology"},{"subjectId":"s3","subjectName":"Chemistry"}]},
+{"studentName":"Lisa","age":16,"subjects":[{"subjectId":"s1","subjectName":"English"},{"subjectId":"s3","subjectName":"Maths"}]}]

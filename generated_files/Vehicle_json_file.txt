@@ -1,0 +1,1 @@
+[{"brand":"Skoda","model":"Kushaq","wheels":4,"engineType":"Turbo Charged","fuelType":"DIESEL"},{"brand":"Toyota","model":"Corolla","wheels":4,"engineType":"Quadrajet","fuelType":"DIESEL"},{"brand":"Skoda","model":"Rapid","wheels":4,"engineType":"non-Turbo","fuelType":"PETROL"},{"brand":"BMW","model":"M3","wheels":4,"engineType":"Turbo Charged","fuelType":"DIESEL"}]
