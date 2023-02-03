@@ -38,6 +38,6 @@ public class SearchBiggest {
 		
 		int[] arr1 = new int[] {-9, 14, 15, 32, 37, 102};
 		
-			System.out.println(SearchBiggest.exists(arr1, 32));
+			System.out.println(SearchBiggest.exists(arr1, 31));
 	}
 }
