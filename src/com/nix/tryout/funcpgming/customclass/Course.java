@@ -26,7 +26,7 @@ public class Course {
 
     @Override
     public String toString() {
-        return  name +", " + noOfStudents + ", " + reviewScore + "\n";
+        return  "( "+name +", " + noOfStudents + ", " + reviewScore + ")\n";
     }
 
     public Course(String name, String category, int reviewScore, int noOfStudents) {
