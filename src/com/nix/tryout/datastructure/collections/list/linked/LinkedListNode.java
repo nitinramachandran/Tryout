@@ -3,15 +3,18 @@ package com.nix.tryout.datastructure.collections.list.linked;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Represents a LinkedList node with a bunch of functionalities.
  * The Linked list should be capable of accepting any kind of object
  * which is represented by the generic notation 'E'
  */
+@SuppressWarnings("ALL")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -38,7 +41,7 @@ public class LinkedListNode<E> {
     }
 
     /**
-     * Returns the last child node
+     * Returns the last child node recursively
      * @param - The parent LinkedListNode node
      * @return - The last child node in the LinkedList
      */
@@ -47,6 +50,52 @@ public class LinkedListNode<E> {
             return getYoungestChild(node.next);
         }
         return node;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LinkedListNode<?> that = (LinkedListNode<?>) o;
+        return payload.equals(that.payload) && Objects.equals(next, that.next);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(payload, next);
+    }
+
+    public LinkedListNode deleteNode(LinkedListNode node) {
+        return null;
+    }
+
+    /**
+     * Inserts a new node to the end of the Linked List
+     * @param node
+     * @param position (Optional)
+     * @param E payload (Optional)
+     */
+    public void insertNode(LinkedListNode node, E payload, Integer position) {
+        if (Objects.isNull(position)) {
+            LinkedListNode tailNode = getYoungestChild(this);
+            tailNode.next = buildNode(node, payload);
+        } else {
+
+        }
+    }
+
+    /**
+     * Returns a node with payload set if payload not null
+     * @param node
+     * @param payload (Optional)
+     * @return
+     */
+    private LinkedListNode<E> buildNode(LinkedListNode node, E payload) {
+        LinkedListNode localNode = node;
+        if (!Objects.isNull(payload)) {
+            localNode.payload = payload;
+        }
+        return localNode;
     }
 
     /**
@@ -75,7 +124,7 @@ public class LinkedListNode<E> {
      * @param - List<Integer> objectList
      * @return - Returns parent LinkedList node
      */
-    public LinkedListNode<E> generateLinkedListFromArrayList(List<E> objectList) {
+    public LinkedListNode<E> generateLinkedListFromArrayList(@NotNull List<E> objectList) {
         LinkedListNode<E> node = new LinkedListNode();
         for(E obj : objectList) {
 
@@ -93,6 +142,6 @@ public class LinkedListNode<E> {
     }
     @Override
     public String toString() {
-        return "Value : " + this.payload;
+        return this.payload.toString();
     }
 }
