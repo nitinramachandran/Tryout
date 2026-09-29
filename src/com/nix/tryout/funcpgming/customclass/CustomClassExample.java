@@ -11,14 +11,18 @@ public class CustomClassExample {
         List<Course> courses = FactoryClass.getCourses();
 
         // allMatch, noneMatch and anyMatch
-  //      System.out.println(courses.stream().allMatch(course -> course.getReviewScore() > 90));
-  //      System.out.println(courses.stream().anyMatch(course -> course.getReviewScore() > 90));
+        // System.out.println(courses.stream().allMatch(course ->
+        // course.getReviewScore() > 90));
+        // System.out.println(courses.stream().anyMatch(course ->
+        // course.getReviewScore() > 90));
         Comparator<Course> compareByNoOfStudents = Comparator.comparing(Course::getNoOfStudents);
         Comparator<Course> compareByReview = Comparator.comparing(Course::getReviewScore).reversed();
         Comparator<Course> compareByCourseName = Comparator.comparing(Course::getName);
 
-        Comparator<Course> compareByReviewAndStudents = Comparator.comparingInt(Course::getNoOfStudents).thenComparingInt(Course::getReviewScore).reversed();
-        Predicate<Course> predicateByReviewAndStudentsNumber = course -> course.getReviewScore() > 90 && course.getNoOfStudents() > 10000;
+        Comparator<Course> compareByReviewAndStudents = Comparator.comparingInt(Course::getNoOfStudents)
+                .thenComparingInt(Course::getReviewScore).reversed();
+        Predicate<Course> predicateByReviewAndStudentsNumber = course -> course.getReviewScore() > 90
+                && course.getNoOfStudents() > 10000;
 
         var courseMap = CourseService.getCourseAsMap(FactoryClass.getCourses());
         System.out.print(courseMap);
@@ -27,9 +31,11 @@ public class CustomClassExample {
                 CourseService.getSumOfStudentsForPredicate(predicateByReviewAndStudentsNumber,
                         FactoryClass.getCourses()));
 
-/*        System.out.println(
-                courses.stream()
-                        .dropWhile(course -> course.getReviewScore() > 80)
-                        .collect(Collectors.toList()));*/
+        /*
+         * System.out.println(
+         * courses.stream()
+         * .dropWhile(course -> course.getReviewScore() > 80)
+         * .collect(Collectors.toList()));
+         */
     }
 }

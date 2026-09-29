@@ -16,6 +16,7 @@ public class FuncCollector {
 
     /**
      * Returns the square of each of the values in the list
+     * 
      * @parameters Integer list of numbers
      * @return Integer list of numbers
      */
@@ -27,6 +28,7 @@ public class FuncCollector {
 
     /**
      * Returns the length of the strings as a list
+     * 
      * @param names as list
      * @return list of numbers
      */
